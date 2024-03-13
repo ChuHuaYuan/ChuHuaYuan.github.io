@@ -1,11 +1,11 @@
 ---
-layout: archive
+# layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-  <div class="wordwrap">You can also find my articles on [my Google Scholar profile](https://scholar.google.com/citations?user=7K0s54kAAAAJ)
+You can also find my articles on [my Google Scholar profile](https://scholar.google.com/citations?user=7K0s54kAAAAJ)
 
 Journals
 =====
