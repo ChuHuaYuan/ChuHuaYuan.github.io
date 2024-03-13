@@ -32,4 +32,4 @@ Publications
 **Recent papers**
   * Our recent paper about SAGIN emulation was accepted by **IEEE JCIN**.
 
-A list can be found [here](https://ChuHuaWu.github.io/publications/)
+A list can be found [here](https://ChuHuaYuan.github.io/publications/).
