@@ -24,7 +24,7 @@ author:
   avatar           : "zq_photo.jpg"
   name             : "Qi Zhang / 张旗"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. student, \\n Fudan University,\\n School of Computer Science"
+  bio              : "Ph.D. student"
   location         : "Shanghang, China"
   employer         : "Fudan University"
   uri              : # URL
@@ -36,7 +36,7 @@ author:
   impactstory      : # URL
   orcid            : # "http://orcid.org/yourorcidurl"
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Qi-Zhang-587"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
