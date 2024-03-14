@@ -9,7 +9,7 @@ redirect_from:
 
 Self-Introduction
 =====
-I am a Ph.D. student at the Intelligent Network Center Laboratory（INC）, part of the School of Computer Science and Technology at Fudan University. My research focuses on Satellite-Air-Ground Integrated Network(SAGIN), path computation, and simulator development. 
+I am a Ph.D. student at the Intelligent Network Center Laboratory（INC）, part of the School of Computer Science and Technology at Fudan University. My research focuses on Satellite-Air-Ground Integrated Network(SAGIN), path computation, and simulator development. (Email: qizhang23@m.fudan.edu.cn)
 <!-- Recently, I have been exploring topics such as **integrated space-air-ground networks**, **satellite network routing**, **simulators**, and **mobile edge computing**. -->
 
 
