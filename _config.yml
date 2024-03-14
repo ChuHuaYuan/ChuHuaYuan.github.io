@@ -24,7 +24,7 @@ author:
   avatar           : "zq_photo.jpg"
   name             : "Qi Zhang / 张旗"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. student, Fudan University, School of Computer Science"
+  bio              : "Ph.D. student, \n Fudan University,\n School of Computer Science"
   location         : "Shanghang, China"
   employer         : "Fudan University"
   uri              : # URL
