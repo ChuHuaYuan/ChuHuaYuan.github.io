@@ -1,0 +1,457 @@
+/**
+ * Site data for Qi Zhang's academic homepage.
+ * To add a new publication, append an entry to the top of `SITE_DATA.publications`.
+ */
+window.SITE_DATA = {
+  meta: {
+    siteUrl: "https://chuhuayuan.github.io",
+    email: "qizhang23@m.fudan.edu.cn",
+    selfAuthorName: "Qi Zhang",
+    lastUpdated: {
+      en: "Updated 2026",
+      zh: "更新于 2026",
+    },
+    avatars: [
+      {
+        id: "portrait",
+        src: "assets/img/avatar-portrait.png",
+        alt: {
+          en: "Pixel-art portrait of Qi Zhang with orbital satellite background",
+          zh: "张旗的像素风格学术头像（卫星轨道背景）",
+        },
+        label: {
+          en: "Switch to SAGIN emblem",
+          zh: "切换为卫星徽标",
+        },
+      },
+      {
+        id: "satellite",
+        src: "assets/img/avatar-satellite.png",
+        alt: {
+          en: "Pixel-art low-earth orbit satellite internet emblem",
+          zh: "空天地一体化卫星网络像素徽标",
+        },
+        label: {
+          en: "Switch to pixel portrait",
+          zh: "切换为像素头像",
+        },
+      },
+    ],
+  },
+
+  i18n: {
+    en: {
+      pageTitle: "Qi Zhang (张旗) — Fudan University",
+      pageDescription:
+        "Qi Zhang, Ph.D. student at the Institute of Space Internet (SpaceNet) & School of Computer Science and Technology, Fudan University. Research on Satellite-Air-Ground Integrated Networks (SAGIN), LEO satellite routing, and network emulation.",
+      brandName: "Qi Zhang",
+      nav: {
+        about: "About",
+        publications: "Publications",
+        education: "Education",
+      },
+      langSwitch: "中文",
+      langSwitchAria: "Switch language to Chinese",
+      themeSwitchAria: "Toggle light and dark theme",
+      hero: {
+        primaryName: "Qi Zhang",
+        secondaryName: "张旗",
+        role: "Ph.D. Student · School of Computer Science and Technology, Fudan University",
+        affiliationPrefix: "Affiliated with",
+        labName: "Institute of Space Internet (SpaceNet)",
+        labUrl: "https://spacenet.fudan.edu.cn/",
+        labSuffix: "· Shanghai, China",
+        copyEmail: "Copy",
+        copiedEmail: "Copied",
+        avatarHint: "Click to toggle emblem",
+      },
+      sections: {
+        about: "About",
+        publications: "Publications",
+        education: "Education",
+      },
+      aboutParagraphs: [
+        `I am a Ph.D. student in the School of Computer Science and Technology at Fudan University, affiliated with the <a href="https://spacenet.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">Institute of Space Internet (SpaceNet)</a>. Previously, I received my M.S. in Computer Science and Technology from Soochow University in 2023 and my B.S. in Software Engineering from Henan University in 2020.`,
+        `My research centers on <strong>Satellite-Air-Ground Integrated Networks (SAGIN)</strong> and low-earth orbit (LEO) mega-constellations, with a focus on hierarchical control-plane architecture, satellite routing and path computation, satellite–ground interconnection, and scalable digital-twin network emulation systems.`,
+      ],
+      publicationsUi: {
+        filters: {
+          all: "All",
+          first: "First Author",
+          journal: "Journal",
+          conference: "Conference",
+        },
+        firstAuthorBadge: "First Author",
+        scholarNote: "Full citation metrics on",
+        scholarLinkText: "Google Scholar",
+        copyBibtex: "Copy BibTeX",
+        copiedBibtex: "Copied!",
+        emptyState: "No publications match this filter.",
+      },
+      footer: {
+        copyright: "© 2026 Qi Zhang · Shanghai, China",
+        backToTop: "Top",
+      },
+    },
+
+    zh: {
+      pageTitle: "张旗 (Qi Zhang) — 复旦大学",
+      pageDescription:
+        "张旗，复旦大学计算机科学技术学院、复旦大学空间互联网研究院博士研究生。研究方向为空天地一体化网络（SAGIN）、低轨卫星路由与路径计算、卫星网络仿真与数字孪生系统。",
+      brandName: "张旗",
+      nav: {
+        about: "简介",
+        publications: "学术论文",
+        education: "教育背景",
+      },
+      langSwitch: "EN",
+      langSwitchAria: "Switch language to English",
+      themeSwitchAria: "切换浅色或深色主题",
+      hero: {
+        primaryName: "张旗",
+        secondaryName: "Qi Zhang",
+        role: "博士研究生 · 复旦大学 计算机科学技术学院",
+        affiliationPrefix: "隶属于",
+        labName: "复旦大学空间互联网研究院 (SpaceNet)",
+        labUrl: "https://spacenet.fudan.edu.cn/",
+        labSuffix: "· 中国·上海",
+        copyEmail: "复制",
+        copiedEmail: "已复制",
+        avatarHint: "点击切换徽标",
+      },
+      sections: {
+        about: "个人简介",
+        publications: "学术论文",
+        education: "教育背景",
+      },
+      aboutParagraphs: [
+        `我目前是复旦大学计算机科学技术学院在读博士研究生，隶属于<a href="https://spacenet.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">复旦大学空间互联网研究院（SpaceNet）</a>。此前，我于 2023 年在苏州大学获得计算机科学与技术硕士学位，于 2020 年在河南大学获得软件工程学士学位。`,
+        `我的主要研究方向为<strong>空天地一体化网络（SAGIN）</strong>与低轨（LEO）巨型卫星星座，重点关注分层卫星网络控制平面架构、低轨星座路由与路径计算、星地互联拓扑设计，以及大规模卫星网络仿真与数字孪生系统研发。`,
+      ],
+      publicationsUi: {
+        filters: {
+          all: "全部",
+          first: "第一作者",
+          journal: "期刊论文",
+          conference: "会议论文",
+        },
+        firstAuthorBadge: "第一作者",
+        scholarNote: "完整引用数据见",
+        scholarLinkText: "Google Scholar",
+        copyBibtex: "复制 BibTeX",
+        copiedBibtex: "已复制",
+        emptyState: "当前筛选条件下暂无匹配论文。",
+      },
+      footer: {
+        copyright: "© 2026 张旗 · Qi Zhang · 中国·上海",
+        backToTop: "返回顶部",
+      },
+    },
+  },
+
+  links: [
+    {
+      id: "scholar",
+      label: { en: "Google Scholar", zh: "Google Scholar" },
+      url: "https://scholar.google.com/citations?user=7K0s54kAAAAJ",
+    },
+    {
+      id: "orcid",
+      label: { en: "ORCID", zh: "ORCID" },
+      url: "https://orcid.org/0009-0005-9250-4541",
+    },
+    {
+      id: "researchgate",
+      label: { en: "ResearchGate", zh: "ResearchGate" },
+      url: "https://www.researchgate.net/profile/Qi-Zhang-587",
+    },
+    {
+      id: "github",
+      label: { en: "GitHub", zh: "GitHub" },
+      url: "https://github.com/ChuHuaYuan",
+    },
+    {
+      id: "lab",
+      label: { en: "SpaceNet Lab", zh: "空间互联网研究院" },
+      url: "https://spacenet.fudan.edu.cn/",
+    },
+  ],
+
+  education: [
+    {
+      period: { en: "2023.09 – Present", zh: "2023.09 – 至今" },
+      institution: { en: "Fudan University", zh: "复旦大学" },
+      location: { en: "Shanghai, China", zh: "上海" },
+      degree: {
+        en: "Ph.D. Student in Electronic Information",
+        zh: "电子信息 · 博士研究生在读",
+      },
+      department: {
+        en: "School of Computer Science and Technology · Institute of Space Internet (SpaceNet)",
+        zh: "计算机科学技术学院 · 空间互联网研究院（SpaceNet）",
+      },
+    },
+    {
+      period: { en: "2020.09 – 2023.07", zh: "2020.09 – 2023.07" },
+      institution: { en: "Soochow University", zh: "苏州大学" },
+      location: { en: "Suzhou, China", zh: "苏州" },
+      degree: {
+        en: "M.S. in Computer Science and Technology",
+        zh: "计算机科学与技术 · 工学硕士",
+      },
+      department: {
+        en: "School of Computer Science and Technology",
+        zh: "计算机科学与技术学院",
+      },
+    },
+    {
+      period: { en: "2016.09 – 2020.07", zh: "2016.09 – 2020.07" },
+      institution: { en: "Henan University", zh: "河南大学" },
+      location: { en: "Kaifeng, China", zh: "开封" },
+      degree: {
+        en: "B.S. in Software Engineering",
+        zh: "软件工程 · 工学学士",
+      },
+      department: {
+        en: "School of Software",
+        zh: "软件学院",
+      },
+    },
+  ],
+
+  publications: [
+    {
+      id: "zhang2026eunomia",
+      year: 2026,
+      type: "journal",
+      firstAuthor: true,
+      venueShort: "IEEE JSAC",
+      rank: "CCF-A",
+      title:
+        "Eunomia: A Multicontroller Domain Partitioning Framework in Hierarchical Satellite Networks",
+      authors: [
+        "Qi Zhang",
+        "Kun Qiu",
+        "Zhe Chen",
+        "Wenjun Zhu",
+        "Xiaofan Xu",
+        "Ping Du",
+        "Yue Gao",
+      ],
+      venueFull:
+        "IEEE Journal on Selected Areas in Communications, vol. 44, pp. 2807–2820, 2026",
+      doi: "10.1109/JSAC.2025.3645017",
+      arxiv: "https://arxiv.org/abs/2512.09345",
+      bibtex: `@article{zhang2026eunomia,
+  title     = {Eunomia: A Multicontroller Domain Partitioning Framework in Hierarchical Satellite Networks},
+  author    = {Zhang, Qi and Qiu, Kun and Chen, Zhe and Zhu, Wenjun and Xu, Xiaofan and Du, Ping and Gao, Yue},
+  journal   = {IEEE Journal on Selected Areas in Communications},
+  volume    = {44},
+  pages     = {2807--2820},
+  year      = {2026},
+  publisher = {IEEE},
+  doi       = {10.1109/JSAC.2025.3645017}
+}`,
+    },
+    {
+      id: "liu2025efficient",
+      year: 2025,
+      type: "journal",
+      firstAuthor: false,
+      venueShort: "IEEE TMC",
+      rank: "CCF-A",
+      title:
+        "Efficient Satellite-Ground Interconnection Design for Low-Orbit Mega-Constellation Topology",
+      authors: [
+        "Wenhao Liu",
+        "Jiazhi Wu",
+        "Quanwei Lin",
+        "Handong Luo",
+        "Qi Zhang",
+        "Kun Qiu",
+        "Zhe Chen",
+        "Yue Gao",
+      ],
+      venueFull:
+        "IEEE Transactions on Mobile Computing, vol. 24, no. 3, pp. 2098–2109, Mar. 2025",
+      doi: "10.1109/TMC.2024.3490575",
+      bibtex: `@article{liu2025efficient,
+  title     = {Efficient Satellite-Ground Interconnection Design for Low-Orbit Mega-Constellation Topology},
+  author    = {Liu, Wenhao and Wu, Jiazhi and Lin, Quanwei and Luo, Handong and Zhang, Qi and Qiu, Kun and Chen, Zhe and Gao, Yue},
+  journal   = {IEEE Transactions on Mobile Computing},
+  volume    = {24},
+  number    = {3},
+  pages     = {2098--2109},
+  year      = {2025},
+  publisher = {IEEE},
+  doi       = {10.1109/TMC.2024.3490575}
+}`,
+    },
+    {
+      id: "peng2025dora",
+      year: 2025,
+      type: "conference",
+      firstAuthor: false,
+      venueShort: "IEEE/CIC ICCC",
+      rank: null,
+      title:
+        "Dora: A Controller Provisioning Strategy in Hierarchical Domain-based Satellite Networks",
+      authors: ["Qiyuan Peng", "Qi Zhang", "Yue Gao", "Kun Qiu"],
+      venueFull:
+        "2025 IEEE/CIC International Conference on Communications in China (ICCC), pp. 1–6, 2025",
+      doi: "10.1109/ICCC65529.2025.11149300",
+      arxiv: "https://arxiv.org/abs/2507.14512",
+      bibtex: `@inproceedings{peng2025dora,
+  title     = {Dora: A Controller Provisioning Strategy in Hierarchical Domain-based Satellite Networks},
+  author    = {Peng, Qiyuan and Zhang, Qi and Gao, Yue and Qiu, Kun},
+  booktitle = {2025 IEEE/CIC International Conference on Communications in China (ICCC)},
+  pages     = {1--6},
+  year      = {2025},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCC65529.2025.11149300}
+}`,
+    },
+    {
+      id: "wang2025stabilizing",
+      year: 2025,
+      type: "conference",
+      firstAuthor: false,
+      venueShort: "IEEE/CIC ICCC Workshops",
+      rank: null,
+      title:
+        "Stabilizing and Optimizing Inter-Shell Routing in LEO Networks with Integrated Routing Cost",
+      authors: ["Yaojia Wang", "Qi Zhang", "Kun Qiu", "Yue Gao"],
+      venueFull:
+        "2025 IEEE/CIC International Conference on Communications in China (ICCC Workshops), pp. 1–6, 2025",
+      doi: "10.1109/ICCCWorkshops67136.2025.11148095",
+      arxiv: "https://arxiv.org/abs/2507.08549",
+      bibtex: `@inproceedings{wang2025stabilizing,
+  title     = {Stabilizing and Optimizing Inter-Shell Routing in LEO Networks with Integrated Routing Cost},
+  author    = {Wang, Yaojia and Zhang, Qi and Qiu, Kun and Gao, Yue},
+  booktitle = {2025 IEEE/CIC International Conference on Communications in China (ICCC Workshops)},
+  pages     = {1--6},
+  year      = {2025},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCCWorkshops67136.2025.11148095}
+}`,
+    },
+    {
+      id: "zhang2025intention",
+      year: 2025,
+      type: "journal",
+      firstAuthor: false,
+      venueShort: "Computer Networks",
+      rank: "CCF-B",
+      title:
+        "An Intention-Driven Task Offloading Strategy Based on Imitation Learning in Pervasive Edge Computing",
+      authors: ["Yang Zhang", "Shukui Zhang", "Qi Zhang", "Jianxi Fan"],
+      venueFull: "Computer Networks, vol. 257, 110998, Feb. 2025",
+      doi: "10.1016/j.comnet.2024.110998",
+      bibtex: `@article{zhang2025intention,
+  title     = {An intention-driven task offloading strategy based on imitation learning in pervasive edge computing},
+  author    = {Zhang, Yang and Zhang, Shukui and Zhang, Qi and Fan, Jianxi},
+  journal   = {Computer Networks},
+  volume    = {257},
+  pages     = {110998},
+  year      = {2025},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.comnet.2024.110998}
+}`,
+    },
+    {
+      id: "luo2024hurry",
+      year: 2024,
+      type: "conference",
+      firstAuthor: false,
+      venueShort: "Euro-Par",
+      rank: "CCF-B",
+      title:
+        "Hurry: Dynamic Collaborative Framework for Low-Orbit Mega-Constellation Data Downloading",
+      authors: [
+        "Handong Luo",
+        "Wenhao Liu",
+        "Qi Zhang",
+        "Ziheng Yang",
+        "Quanwei Lin",
+        "Wenjun Zhu",
+        "Kun Qiu",
+        "Zhe Chen",
+        "Yue Gao",
+      ],
+      venueFull:
+        "30th European Conference on Parallel and Distributed Processing (Euro-Par), LNCS, pp. 269–282, 2024",
+      doi: "10.1007/978-3-031-69577-3_19",
+      bibtex: `@inproceedings{luo2024hurry,
+  title     = {Hurry: Dynamic Collaborative Framework for Low-Orbit Mega-Constellation Data Downloading},
+  author    = {Luo, Handong and Liu, Wenhao and Zhang, Qi and Yang, Ziheng and Lin, Quanwei and Zhu, Wenjun and Qiu, Kun and Chen, Zhe and Gao, Yue},
+  booktitle = {European Conference on Parallel Processing (Euro-Par)},
+  pages     = {269--282},
+  year      = {2024},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-69577-3_19}
+}`,
+    },
+    {
+      id: "gao2024plotinus",
+      year: 2024,
+      type: "journal",
+      firstAuthor: false,
+      venueShort: "IEEE JCIN",
+      rank: null,
+      highlight: {
+        en: "Cover Paper",
+        zh: "封面文章",
+      },
+      title: "Plotinus: A Satellite Internet Digital Twin System",
+      authors: [
+        "Yue Gao",
+        "Kun Qiu",
+        "Zhe Chen",
+        "Wenjun Zhu",
+        "Qi Zhang",
+        "Handong Luo",
+        "Quanwei Lin",
+        "Ziheng Yang",
+        "Wenhao Liu",
+      ],
+      venueFull:
+        "Journal of Communications and Information Networks, vol. 9, no. 1, pp. 24–33, Mar. 2024",
+      doi: "10.23919/JCIN.2024.10494942",
+      arxiv: "https://arxiv.org/abs/2403.08515",
+      bibtex: `@article{gao2024plotinus,
+  title     = {Plotinus: A Satellite Internet Digital Twin System},
+  author    = {Gao, Yue and Qiu, Kun and Chen, Zhe and Zhu, Wenjun and Zhang, Qi and Luo, Handong and Lin, Quanwei and Yang, Ziheng and Liu, Wenhao},
+  journal   = {Journal of Communications and Information Networks},
+  volume    = {9},
+  number    = {1},
+  pages     = {24--33},
+  year      = {2024},
+  publisher = {PTP / IEEE},
+  doi       = {10.23919/JCIN.2024.10494942}
+}`,
+    },
+    {
+      id: "zhang2022task",
+      year: 2022,
+      type: "conference",
+      firstAuthor: true,
+      venueShort: "IEEE SECON",
+      rank: "CCF-B",
+      title:
+        "Task Scheduling Algorithm Based on Computing-Aware in Mobile Ad Hoc Cloud",
+      authors: ["Qi Zhang", "Yang Zhang", "Shukui Zhang", "Hao Long"],
+      venueFull:
+        "2022 19th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON), pp. 470–478, Sep. 2022",
+      doi: "10.1109/SECON55815.2022.9918578",
+      bibtex: `@inproceedings{zhang2022task,
+  title     = {Task Scheduling Algorithm Based on Computing-Aware in Mobile Ad Hoc Cloud},
+  author    = {Zhang, Qi and Zhang, Yang and Zhang, Shukui and Long, Hao},
+  booktitle = {2022 19th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON)},
+  pages     = {470--478},
+  year      = {2022},
+  publisher = {IEEE},
+  doi       = {10.1109/SECON55815.2022.9918578}
+}`,
+    },
+  ],
+};

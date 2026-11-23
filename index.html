@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qi Zhang (张旗) — Fudan University</title>
+  <meta name="description" content="Qi Zhang, Ph.D. student at the Institute of Space Internet (SpaceNet) &amp; School of Computer Science and Technology, Fudan University. Research on Satellite-Air-Ground Integrated Networks (SAGIN), LEO satellite routing, and network emulation.">
+  <meta name="author" content="Qi Zhang">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Qi Zhang (张旗) — Fudan University">
+  <meta property="og:description" content="Ph.D. Student at Fudan University (Institute of Space Internet, SpaceNet). Research on SAGIN, LEO Satellite Networks, Routing, and Network Emulation.">
+  <meta property="og:url" content="https://chuhuayuan.github.io/">
+  <meta property="og:image" content="https://chuhuayuan.github.io/assets/img/avatar-portrait.png">
+  <link rel="canonical" href="https://chuhuayuan.github.io/">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/avatar-satellite.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem("qz_homepage_theme");
+      var theme = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Qi Zhang",
+    "alternateName": "张旗",
+    "url": "https://chuhuayuan.github.io/",
+    "email": "mailto:qizhang23@m.fudan.edu.cn",
+    "jobTitle": "Ph.D. Student",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Fudan University",
+      "url": "https://spacenet.fudan.edu.cn/"
+    },
+    "sameAs": [
+      "https://scholar.google.com/citations?user=7K0s54kAAAAJ",
+      "https://orcid.org/0009-0005-9250-4541",
+      "https://www.researchgate.net/profile/Qi-Zhang-587",
+      "https://github.com/ChuHuaYuan"
+    ]
+  }
+  </script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span id="brand-name">Qi Zhang</span>
+      </a>
+
+      <div class="nav-wrap">
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a id="nav-about" href="#about">About</a></li>
+            <li><a id="nav-publications" href="#publications">Publications</a></li>
+            <li><a id="nav-education" href="#education">Education</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-controls">
+          <button type="button" class="ctrl-btn" id="lang-toggle" aria-label="Switch language to Chinese">中文</button>
+          <button type="button" class="ctrl-btn ctrl-btn--icon" id="theme-toggle" aria-label="Toggle light and dark theme"></button>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <!-- Subtle live multi-shell LEO constellation micro-animation -->
+      <canvas class="orbit-backdrop" id="orbit-canvas" aria-hidden="true"></canvas>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div class="avatar-slot enter-fade" style="--enter-delay: 0ms;">
+            <button type="button" class="avatar-btn" id="avatar-toggle" title="Switch to SAGIN emblem" aria-label="Switch to SAGIN emblem">
+              <img id="avatar-img" class="avatar-img" src="assets/img/avatar-portrait.png" alt="Pixel-art portrait of Qi Zhang with orbital satellite background" width="120" height="120">
+              <span class="avatar-swap-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 2l4 4-4 4"/>
+                  <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+                  <path d="M7 22l-4-4 4-4"/>
+                  <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <div class="hero-info enter-fade" style="--enter-delay: 70ms;">
+            <div class="hero-name-row">
+              <h1 class="hero-name" id="hero-primary-name">Qi Zhang</h1>
+              <span class="hero-name-secondary" id="hero-secondary-name">张旗</span>
+            </div>
+            <p class="hero-role" id="hero-role">Ph.D. Student · School of Computer Science and Technology, Fudan University</p>
+            <p class="hero-affiliation" id="hero-affiliation">
+              Affiliated with <a href="https://spacenet.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">Institute of Space Internet (SpaceNet)</a> · Shanghai, China
+            </p>
+            <div class="hero-links" id="hero-links">
+              <a class="link-pill" href="mailto:qizhang23@m.fudan.edu.cn">qizhang23@m.fudan.edu.cn</a>
+              <a class="link-pill" href="https://scholar.google.com/citations?user=7K0s54kAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+              <a class="link-pill" href="https://orcid.org/0009-0005-9250-4541" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a class="link-pill" href="https://www.researchgate.net/profile/Qi-Zhang-587" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+              <a class="link-pill" href="https://github.com/ChuHuaYuan" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section enter-fade" id="about" style="--enter-delay: 130ms;">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="title-about">About</h2>
+        </div>
+        <div class="prose" id="about-body">
+          <p>I am a Ph.D. student in the School of Computer Science and Technology at Fudan University, affiliated with the <a href="https://spacenet.fudan.edu.cn/" target="_blank" rel="noopener noreferrer">Institute of Space Internet (SpaceNet)</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="publications">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="title-publications">Publications</h2>
+          <span class="section-meta" id="publications-meta"></span>
+        </div>
+        <div class="pub-filters" id="pub-filters" role="group" aria-label="Filter publications"></div>
+        <div id="pub-list"></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="title-education">Education</h2>
+        </div>
+        <div class="edu-list" id="edu-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span id="footer-copyright">© 2026 Qi Zhang · Shanghai, China</span>
+      <div class="footer-right">
+        <span class="footer-meta" id="footer-updated">Updated 2026</span>
+        <a class="top-link" id="footer-top" href="#top">Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js?v=2"></script>
+  <script src="assets/js/app.js?v=2"></script>
+</body>
+</html>
