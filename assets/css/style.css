@@ -1,6 +1,6 @@
 /* ==========================================================================
    Qi Zhang — Academic Homepage Stylesheet
-   Editorial minimal aesthetic with restrained orbital motion & pixel-art charm
+   Editorial minimal aesthetic with 3D orbital wireframe & pixel-art charm
    ========================================================================== */
 
 :root {
@@ -27,6 +27,10 @@
   --badge-highlight-bg: rgba(109, 40, 217, 0.09);
   --badge-highlight-text: #5b21b6;
   --badge-highlight-border: rgba(109, 40, 217, 0.22);
+
+  --signal-color: #0e7490;
+  --signal-soft: rgba(14, 116, 144, 0.09);
+  --signal-border: rgba(14, 116, 144, 0.25);
 
   --border: #e6e8ed;
   --border-strong: #d5d9e2;
@@ -69,6 +73,10 @@
   --badge-highlight-bg: rgba(167, 139, 250, 0.15);
   --badge-highlight-text: #c4b5fd;
   --badge-highlight-border: rgba(167, 139, 250, 0.3);
+
+  --signal-color: #5eead4;
+  --signal-soft: rgba(94, 234, 212, 0.11);
+  --signal-border: rgba(94, 234, 212, 0.28);
 
   --border: #202a39;
   --border-strong: #2d3b50;
@@ -338,10 +346,10 @@ main {
   padding-bottom: 72px;
 }
 
-/* Hero Section + Live Subtle Orbital Canvas */
+/* Hero Section + Live 3D Wireframe Earth & LEO Constellation */
 .hero-section {
   position: relative;
-  padding: 54px 0 40px;
+  padding: 54px 0 42px;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
@@ -349,13 +357,24 @@ main {
 .orbit-backdrop {
   position: absolute;
   top: 0;
-  right: 0;
-  width: min(56%, 540px);
+  left: 50%;
+  margin-left: 215px;
+  width: 340px;
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0) 100%);
+}
+
+@media (max-width: 1140px) {
+  .orbit-backdrop {
+    left: auto;
+    right: -12px;
+    margin-left: 0;
+    width: 300px;
+    opacity: 0.62;
+  }
 }
 
 .hero-grid {
@@ -367,7 +386,7 @@ main {
   align-items: center;
 }
 
-/* Avatar Button with Pixel Aesthetic */
+/* Avatar Button with Pixel-Aligned Starlight Twinkle & Signal Ping */
 .avatar-slot {
   display: flex;
   flex-direction: column;
@@ -407,16 +426,112 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 180ms ease, transform 280ms var(--ease-out);
+  transition: transform 320ms var(--ease-out);
 }
 
-.avatar-img.is-swapping {
-  opacity: 0;
-  transform: scale(0.92);
-}
-
-.avatar-btn:hover .avatar-img:not(.is-swapping) {
+.avatar-btn:hover .avatar-img {
   transform: scale(1.03);
+}
+
+/* Slow, gentle background starlight twinkle overlay (keeps portrait crisp PNG) */
+.avatar-twinkle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 320ms var(--ease-out);
+}
+
+.avatar-btn:hover .avatar-twinkle {
+  transform: scale(1.03);
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.08;
+  }
+  42% {
+    opacity: 0.92;
+  }
+  58% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes beaconPulse {
+  0%, 72%, 100% {
+    opacity: 0.1;
+  }
+  84% {
+    opacity: 1;
+  }
+}
+
+.twinkle-star {
+  filter: drop-shadow(0 0 1.4px rgba(155, 243, 255, 0.85));
+}
+
+.twinkle-s1 {
+  animation: starTwinkle 4.4s ease-in-out 0s infinite;
+}
+
+.twinkle-s2 {
+  animation: starTwinkle 5.2s ease-in-out 1.3s infinite;
+}
+
+.twinkle-s3 {
+  animation: starTwinkle 4.8s ease-in-out 2.4s infinite;
+}
+
+.twinkle-s4 {
+  animation: starTwinkle 5.8s ease-in-out 0.7s infinite;
+}
+
+.twinkle-s5 {
+  animation: starTwinkle 4.1s ease-in-out 3.1s infinite;
+}
+
+.twinkle-s6 {
+  animation: starTwinkle 5.5s ease-in-out 1.9s infinite;
+}
+
+.twinkle-s7 {
+  animation: starTwinkle 4.6s ease-in-out 3.6s infinite;
+}
+
+.twinkle-beacon {
+  animation: beaconPulse 4.2s ease-in-out 0.4s infinite;
+  filter: drop-shadow(0 0 2.2px rgba(125, 245, 255, 0.95));
+}
+
+/* Signal Ripple on Avatar Click */
+.avatar-ping-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid rgba(125, 232, 255, 0.88);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes avatarPing {
+  0% {
+    opacity: 0.92;
+    transform: scale(0.86);
+    box-shadow: inset 0 0 16px rgba(125, 232, 255, 0.45);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.16);
+    box-shadow: inset 0 0 0 rgba(125, 232, 255, 0);
+  }
+}
+
+.avatar-ping-ring.is-pinging {
+  animation: avatarPing 760ms var(--ease-out) forwards;
 }
 
 .avatar-swap-indicator {
@@ -428,7 +543,7 @@ main {
   border-radius: 7px;
   background: rgba(14, 29, 52, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #e6f0ff;
+  color: #8ceeff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -436,6 +551,7 @@ main {
   transform: translateY(2px);
   transition: opacity var(--transition), transform var(--transition);
   backdrop-filter: blur(4px);
+  z-index: 4;
 }
 
 .avatar-btn:hover .avatar-swap-indicator,
@@ -593,6 +709,54 @@ main {
 .email-copy-btn.copied {
   color: var(--badge-b-text);
   background: var(--badge-b-bg);
+}
+
+/* Subtle ISL Route Telemetry Easter-Egg Bar */
+.route-telemetry {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  overflow: hidden;
+  transition: max-height 280ms var(--ease-out), opacity 240ms ease, margin-top 280ms var(--ease-out);
+}
+
+.route-telemetry.is-active {
+  max-height: 44px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.route-telemetry-pill {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--signal-border);
+  background: var(--signal-soft);
+  color: var(--signal-color);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.route-telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal-color);
+  box-shadow: 0 0 6px var(--signal-color);
+  flex-shrink: 0;
+}
+
+.route-telemetry-path {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.route-telemetry-metric {
+  opacity: 0.85;
 }
 
 /* Content Sections */
@@ -1107,8 +1271,13 @@ main {
   }
 
   .orbit-backdrop {
-    width: 72%;
-    opacity: 0.65;
+    width: 240px;
+    right: -36px;
+    opacity: 0.52;
+  }
+
+  .route-telemetry.is-active {
+    max-height: 68px;
   }
 
   .pub-year-group {
@@ -1133,36 +1302,13 @@ main {
   }
 }
 
-/* Respect Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .enter-fade,
-  .pub-list-fade {
-    animation: none;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .bibtex-collapse,
-  .nav-links a::after,
-  .link-pill,
-  .avatar-btn,
-  .avatar-img {
-    transition: none;
-  }
-}
-
 /* Print Friendly (Academic CV Printout) */
 @media print {
   .site-header,
   .orbit-backdrop,
+  .avatar-twinkle,
+  .avatar-ping-ring,
+  .route-telemetry,
   .pub-filters,
   .pub-actions,
   .email-copy-btn,

@@ -6,6 +6,7 @@
   <title>Qi Zhang (张旗) — Fudan University</title>
   <meta name="description" content="Qi Zhang, Ph.D. student at the Institute of Space Internet (SpaceNet) &amp; School of Computer Science and Technology, Fudan University. Research on Satellite-Air-Ground Integrated Networks (SAGIN), LEO satellite routing, and network emulation.">
   <meta name="author" content="Qi Zhang">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Qi Zhang (张旗) — Fudan University">
@@ -21,11 +22,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
 
   <script>
     (function () {
-      var saved = localStorage.getItem("qz_homepage_theme");
+      var saved = null;
+      try {
+        saved = localStorage.getItem("qz_homepage_theme");
+      } catch (_) {}
       var theme = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
     })();
@@ -82,20 +86,63 @@
 
   <main>
     <section class="hero-section">
-      <!-- Subtle live multi-shell LEO constellation micro-animation -->
+      <!-- Live 3D wireframe Earth + multi-shell LEO constellation & interactive ISL routing -->
       <canvas class="orbit-backdrop" id="orbit-canvas" aria-hidden="true"></canvas>
 
       <div class="container">
         <div class="hero-grid">
           <div class="avatar-slot enter-fade" style="--enter-delay: 0ms;">
-            <button type="button" class="avatar-btn" id="avatar-toggle" title="Switch to SAGIN emblem" aria-label="Switch to SAGIN emblem">
+            <button type="button" class="avatar-btn" id="avatar-toggle" title="Click to ping live LEO route" aria-label="Click to ping live LEO route">
               <img id="avatar-img" class="avatar-img" src="assets/img/avatar-portrait.png" alt="Pixel-art portrait of Qi Zhang with orbital satellite background" width="120" height="120">
+              <!-- Pixel-aligned slow-twinkling background starlight & satellite beacon overlay -->
+              <svg class="avatar-twinkle" viewBox="0 0 100 100" shape-rendering="crispEdges" aria-hidden="true">
+                <!-- Upper-left cyan pixel cross star (6%, 8%) -->
+                <g class="twinkle-star twinkle-s1" fill="#9bf3ff">
+                  <rect x="5" y="7" width="2" height="2"/>
+                  <rect x="3.5" y="7.5" width="5" height="1" opacity="0.75"/>
+                  <rect x="5.5" y="5.5" width="1" height="5" opacity="0.75"/>
+                </g>
+                <!-- Upper-left subtle warm spark (18%, 7%) -->
+                <rect class="twinkle-star twinkle-s4" x="17.5" y="6.5" width="1.6" height="1.6" fill="#ffe2a8"/>
+                <!-- Upper-right gold pixel cross star (93%, 8%) -->
+                <g class="twinkle-star twinkle-s2" fill="#ffd98a">
+                  <rect x="92" y="7" width="2" height="2"/>
+                  <rect x="90.5" y="7.5" width="5" height="1" opacity="0.75"/>
+                  <rect x="92.5" y="5.5" width="1" height="5" opacity="0.75"/>
+                </g>
+                <!-- Tiny satellite antenna beacon glint (80.5%, 17.5%) -->
+                <rect class="twinkle-star twinkle-beacon" x="79.5" y="16.5" width="2.2" height="2.2" fill="#8df4ff"/>
+                <!-- Right-edge cyan star (95.5%, 26%) -->
+                <rect class="twinkle-star twinkle-s5" x="94.8" y="25.2" width="1.8" height="1.8" fill="#8eefff"/>
+                <!-- Mid-left cyan star above shoulder (26.5%, 62.5%) -->
+                <g class="twinkle-star twinkle-s3" fill="#94f2ff">
+                  <rect x="25.8" y="61.8" width="2" height="2"/>
+                  <rect x="24.5" y="62.3" width="4.6" height="1" opacity="0.7"/>
+                  <rect x="26.3" y="60.5" width="1" height="4.6" opacity="0.7"/>
+                </g>
+                <!-- Lower-left gold star (8.5%, 80.5%) -->
+                <g class="twinkle-star twinkle-s6" fill="#ffdf94">
+                  <rect x="7.8" y="79.8" width="2" height="2"/>
+                  <rect x="6.5" y="80.3" width="4.6" height="1" opacity="0.7"/>
+                  <rect x="8.3" y="78.5" width="1" height="4.6" opacity="0.7"/>
+                </g>
+                <!-- Lower-right cyan star (93%, 80%) -->
+                <g class="twinkle-star twinkle-s7" fill="#8ef1ff">
+                  <rect x="92.2" y="79.2" width="2" height="2"/>
+                  <rect x="91" y="79.7" width="4.4" height="1" opacity="0.7"/>
+                  <rect x="92.7" y="78" width="1" height="4.4" opacity="0.7"/>
+                </g>
+                <!-- Subtle right mid spark (91%, 59%) -->
+                <rect class="twinkle-star twinkle-s4" x="90.2" y="58.2" width="1.8" height="1.8" fill="#a8f5ff"/>
+              </svg>
+              <span class="avatar-ping-ring" id="avatar-ping-ring" aria-hidden="true"></span>
               <span class="avatar-swap-indicator" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 2l4 4-4 4"/>
-                  <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-                  <path d="M7 22l-4-4 4-4"/>
-                  <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+                  <circle cx="12" cy="12" r="2.2"/>
+                  <path d="M16.2 7.8a6 6 0 0 1 0 8.4"/>
+                  <path d="M7.8 16.2a6 6 0 0 1 0-8.4"/>
+                  <path d="M19.1 4.9a10 10 0 0 1 0 14.2"/>
+                  <path d="M4.9 19.1a10 10 0 0 1 0-14.2"/>
                 </svg>
               </span>
             </button>
@@ -117,6 +164,7 @@
               <a class="link-pill" href="https://www.researchgate.net/profile/Qi-Zhang-587" target="_blank" rel="noopener noreferrer">ResearchGate</a>
               <a class="link-pill" href="https://github.com/ChuHuaYuan" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
+            <div class="route-telemetry" id="route-telemetry" aria-live="polite"></div>
           </div>
         </div>
       </div>
@@ -164,7 +212,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/data.js?v=2"></script>
-  <script src="assets/js/app.js?v=2"></script>
+  <script src="assets/js/data.js?v=4"></script>
+  <script src="assets/js/app.js?v=4"></script>
 </body>
 </html>

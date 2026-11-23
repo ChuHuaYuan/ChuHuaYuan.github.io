@@ -11,32 +11,17 @@ window.SITE_DATA = {
       en: "Updated 2026",
       zh: "更新于 2026",
     },
-    avatars: [
-      {
-        id: "portrait",
-        src: "assets/img/avatar-portrait.png",
-        alt: {
-          en: "Pixel-art portrait of Qi Zhang with orbital satellite background",
-          zh: "张旗的像素风格学术头像（卫星轨道背景）",
-        },
-        label: {
-          en: "Switch to SAGIN emblem",
-          zh: "切换为卫星徽标",
-        },
+    avatar: {
+      src: "assets/img/avatar-portrait.png",
+      alt: {
+        en: "Pixel-art portrait of Qi Zhang with orbital satellite background",
+        zh: "张旗的像素风格学术头像（卫星轨道背景）",
       },
-      {
-        id: "satellite",
-        src: "assets/img/avatar-satellite.png",
-        alt: {
-          en: "Pixel-art low-earth orbit satellite internet emblem",
-          zh: "空天地一体化卫星网络像素徽标",
-        },
-        label: {
-          en: "Switch to pixel portrait",
-          zh: "切换为像素头像",
-        },
+      pingTooltip: {
+        en: "Click to compute a live LEO satellite route",
+        zh: "点击计算实时低轨星间路由",
       },
-    ],
+    },
   },
 
   i18n: {
@@ -63,7 +48,9 @@ window.SITE_DATA = {
         labSuffix: "· Shanghai, China",
         copyEmail: "Copy",
         copiedEmail: "Copied",
-        avatarHint: "Click to toggle emblem",
+        routePrefix: "LEO Route",
+        routeOrigin: "SHA",
+        routeHopsUnit: "hops",
       },
       sections: {
         about: "About",
@@ -117,7 +104,9 @@ window.SITE_DATA = {
         labSuffix: "· 中国·上海",
         copyEmail: "复制",
         copiedEmail: "已复制",
-        avatarHint: "点击切换徽标",
+        routePrefix: "星间路由",
+        routeOrigin: "上海",
+        routeHopsUnit: "跳",
       },
       sections: {
         about: "个人简介",
